@@ -126,7 +126,14 @@ if uploaded_file:
         title="🔥 Impact de la température et du carburant sur les ventes",
         color_continuous_scale='sunset'
     )
-    fig3.update_layout(title_x=0.3, plot_bgcolor='#F9F9F9', paper_bgcolor='black')
+
+    fig3.update_layout(
+        title_x=0.3,
+        plot_bgcolor='#F9F9F9',
+        paper_bgcolor='black',
+        font=dict(color='white'),
+        margin=dict(l=40, r=40, t=60, b=40)
+    )
     st.plotly_chart(fig3, use_container_width=True)
 
     # ➤ Graph 4 : Chômage vs ventes
