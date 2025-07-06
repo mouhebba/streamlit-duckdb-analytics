@@ -1,0 +1,88 @@
+Metadata-Version: 2.1
+Name: scip
+Version: 0.1.12
+Summary: Scalable Cytometry Image Processing (SCIP) is an open-source tool that implements an image
+Home-page: https://github.com/ScalableCytometryImageProcessing/SCIP
+Author: Maxim Lippeveld
+Author-email: maxim.lippeveld@ugent.be
+Maintainer: Maxim Lippeveld
+License: GPL-2.0-or-later
+Project-URL: Documentation, https://scalable-cytometry-image-processing.readthedocs.io/en/latest/
+Project-URL: Source, https://github.com/ScalableCytometryImageProcessing/SCIP
+Project-URL: Tracker, https://github.com/ScalableCytometryImageProcessing/SCIP/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Topic :: Scientific/Engineering :: Image Processing
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown; chartset=UTF-8
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: Pillow
+Requires-Dist: dask[distributed] (>=2022.01.1)
+Requires-Dist: click
+Requires-Dist: scikit-image
+Requires-Dist: pyyaml
+Requires-Dist: graphviz
+Requires-Dist: zarr
+Requires-Dist: pyarrow
+Requires-Dist: anndata
+Requires-Dist: pandas
+Requires-Dist: numba
+Requires-Dist: aicsimageio
+Provides-Extra: cellpose
+Requires-Dist: cellpose ; extra == 'cellpose'
+Provides-Extra: czi
+Requires-Dist: aicspylibczi ; extra == 'czi'
+Provides-Extra: dev
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: wheel ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: pytest-cov ; extra == 'dev'
+Requires-Dist: pytest-mpi ; extra == 'dev'
+Requires-Dist: types-PyYAML ; extra == 'dev'
+Requires-Dist: types-setuptools ; extra == 'dev'
+Requires-Dist: sphinx ; extra == 'dev'
+Requires-Dist: sphinx-autobuild ; extra == 'dev'
+Requires-Dist: sphinx-copybutton ; extra == 'dev'
+Requires-Dist: versioneer ; extra == 'dev'
+Requires-Dist: furo ; extra == 'dev'
+Provides-Extra: jobqueue
+Requires-Dist: dask-jobqueue ; extra == 'jobqueue'
+Provides-Extra: mpi
+Requires-Dist: dask-mpi ; extra == 'mpi'
+Requires-Dist: mpi4py ; extra == 'mpi'
+
+![SCIP logo](docs/source/logo.png)
+
+# SCIP: Scalable Cytometry Image Processing
+
+![main workflow badge](https://github.com/ScalableImagingPipeline/dask-pipeline/actions/workflows/main.yml/badge.svg) [![Documentation Status](https://readthedocs.org/projects/scalable-cytometry-image-processing/badge/?version=latest)](https://scalable-cytometry-image-processing.readthedocs.io/en/latest/?badge=latest) [![codecov](https://codecov.io/gh/ScalableCytometryImageProcessing/SCIP/branch/main/graph/badge.svg?token=6RYKJ8CLU0)](https://codecov.io/gh/ScalableCytometryImageProcessing/SCIP)
+
+Scalable Cytometry Image Processing (SCIP) is an open-source tool that implements
+an image processing pipeline on top of Dask, a distributed computing framework written in Python.
+SCIP performs normalization, image segmentation and masking, and feature extraction.
+
+Check the [docs](https://readthedocs.org/projects/scalable-cytometry-image-processing) for
+installation and usage instructions, and API documentation.
+
+## Development
+
+### Generating documentation
+
+For publishing online:
+```
+cd docs
+make clean
+make html
+```
+
+For development with live reloading:
+```
+cd docs
+make livehtml
+```
+
+### Generate release changelog
+```
+git log v{previous version tag}..HEAD --oneline | xclip -sel clip
+```
