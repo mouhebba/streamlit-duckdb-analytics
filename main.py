@@ -144,7 +144,14 @@ if uploaded_file:
         title="📊 Corrélation chômage et ventes",
         color_discrete_sequence=px.colors.qualitative.Vivid
     )
-    fig4.update_layout(title_x=0.3, plot_bgcolor='#F9F9F9', paper_bgcolor='black')
+
+    fig4.update_layout(
+        title_x=0.3,
+        plot_bgcolor='#F9F9F9',
+        paper_bgcolor='black',
+        font=dict(color='white'),
+        margin=dict(l=40, r=40, t=60, b=40)
+    )
     st.plotly_chart(fig4, use_container_width=True)
 
 else:
