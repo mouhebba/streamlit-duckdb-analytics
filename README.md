@@ -20,7 +20,7 @@ Ce projet consiste à créer une **application web interactive avec Streamlit** 
 | Salma Echalih        | Funny Team member                     |
 | Mouheb Ben Abdallah  |  Super Team member                    |
 
-PS : Ce travail était le fruit de contribution collaborative de tout les membres de l'équipe 
+PS : Ce travail était le fruit de contribution collaborative de tous les membres de l'équipe 
 ---
 
 ## 📦 Fonctionnalités de l'application
